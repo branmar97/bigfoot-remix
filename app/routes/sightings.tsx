@@ -1,7 +1,6 @@
 import { Outlet, Link, useLoaderData } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import type { Sighting } from "@prisma/client";
 import { db } from "~/utils/db.server";
 
 type LoaderData = {
