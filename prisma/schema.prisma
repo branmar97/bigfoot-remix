@@ -9,3 +9,17 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Sighting {
+  id         String   @id @default(uuid())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  occurence  DateTime
+  city       String
+  state      String
+  vicinity   String
+  conditions String
+  witnesses  Int
+  evidence   String
+  details    String
+}
