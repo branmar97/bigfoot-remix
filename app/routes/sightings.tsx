@@ -5,12 +5,16 @@ import type { Sighting } from "@prisma/client";
 import { db } from "~/utils/db.server";
 
 type LoaderData = {
-    sightingListItems: Array<Sighting>;
+    sightingListItems: Array<{ id: string, title: string }>;
 };
 
 export const loader: LoaderFunction = async () => {
     const data: LoaderData = {
-        sightingListItems: await db.sighting.findMany(),
+        sightingListItems: await db.sighting.findMany({
+            take: 10,
+            select: { id: true, title: true },
+            orderBy: { createdAt: "desc" },
+          }),
     };
     return json(data);
 }
