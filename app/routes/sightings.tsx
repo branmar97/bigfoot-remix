@@ -1,7 +1,7 @@
 import { Outlet, Link, useLoaderData } from "@remix-run/react";
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Sighting } from "@prisma/client";
+import type { Sighting } from "@prisma/client";
 import { db } from "~/utils/db.server";
 
 type LoaderData = {
@@ -31,7 +31,7 @@ export default function SightingsRoute() {
                     <ul>
                         {data.sightingListItems.map((sighting) => (
                             <li key={sighting.id}>
-                                <Link to={sighting.id}>{sighting.occurence}</Link>
+                                <Link to={sighting.id}>{sighting.title}</Link>
                             </li>
                         ))}
                     </ul>

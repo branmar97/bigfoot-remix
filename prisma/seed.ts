@@ -15,6 +15,7 @@ function getSightings() {
 
   return [
     {
+        title: "Bigfoot seen walking in woods",
         occurence: new Date(),
         city: "Richmond",
         state: "Virginia",
@@ -25,6 +26,7 @@ function getSightings() {
         details: "Saw bigfoot walking in the woods."
     },
     {
+        title: "Bigfoot seen walking in woods",
         occurence: new Date(),
         city: "Richmond",
         state: "Virginia",
