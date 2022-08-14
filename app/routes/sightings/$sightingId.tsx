@@ -2,6 +2,7 @@ import type { Sighting } from "@prisma/client";
 import type { LoaderFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import ReactTimeAgo from "react-time-ago";
 import { db } from "~/utils/db.server";
 
 type LoaderData = { sighting: Sighting };
@@ -25,6 +26,7 @@ export default function SightingRoute() {
   return (
     <div>
       <h2>{data.sighting.title}</h2>
+      <p>Reported <ReactTimeAgo date={new Date(data.sighting.createdAt)} /></p>
       <div>
         <ul>
           <li>Occured {data.sighting.occurence}</li>

@@ -14,8 +14,10 @@
     "@remix-run/node": "^1.6.8",
     "@remix-run/react": "^1.6.8",
     "@remix-run/serve": "^1.6.8",
+    "javascript-time-ago": "^2.5.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-time-ago": "^7.2.1"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.6.8",
